@@ -10,6 +10,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 sns.set()
 matplotlib.rcParams['pdf.fonttype'] = 42
 matplotlib.rcParams['ps.fonttype'] = 42
+plt.rcParams['font.family'] = 'Times New Roman'
 
 dt_d = datetime.now().strftime('%Y%m_%d')
 dt_s = datetime.now().strftime('%H%M%S')
