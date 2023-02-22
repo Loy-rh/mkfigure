@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import os
+import glob
 
 
 def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='average',
@@ -27,20 +28,20 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
     if mode == 'figure':
         def make_df_plus(method, base_addr, dataset, exp_type):
             if ylabel == 'Accuracy':
-                path = "{}/{}_{}_acc.txt".format(base_addr, dataset, exp_type)
+                path = glob.glob("{}/*acc.txt".format(base_addr))
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
             elif ylabel == 'Number_of_labeled_samples':
-                path = "{}/{}_{}_stats1.txt".format(base_addr, dataset, exp_type)
+                path = glob.glob("{}/*stats1.txt".format(base_addr))
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
                 df1[ylabel] = [i/500 for i in df1[ylabel]]
             elif ylabel == "AUC":
-                path = "{}/{}_{}_stats1.txt".format(base_addr, dataset, exp_type)
+                path = glob.glob("{}/*stats1.txt".format(base_addr))
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
             elif ylabel == "plabel_acc":
-                path = "{}/{}_{}_stats1.txt".format(base_addr, dataset, exp_type)
+                path = glob.glob("{}/*stats1.txt".format(base_addr))
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
                 df1[ylabel] = [i*100 for i in df1[ylabel]]
