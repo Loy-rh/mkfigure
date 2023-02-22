@@ -9,7 +9,6 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
 
     # change the order of the graphs by changing this exp_type order
     exp_type_order2 = []
-    exp_dict = {}
     for type in exp_type_order:
         if type == "0.2_sym":
             exp_type_order2.append("sym_20")
@@ -78,7 +77,7 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
     else:
         raise NotImplementedError
 
-    for exp_type, exp_type2 in exp_type_order, exp_type_order2:
+    for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
         method = 'DivideMix'
         if method in hue_order:
             base_addr = "{}{}/{}_{}_{}_{}/*".format(
@@ -90,8 +89,6 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
             base_addr = "{}{}/{}_UPL_{}_{}/*".format(
                 root, read_dir[method], dataset, arch, exp_type2)
             process(method, base_addr, dataset, exp_type)
-
-
 
     if mode == 'figure':
         df = pd.concat(df_list)
