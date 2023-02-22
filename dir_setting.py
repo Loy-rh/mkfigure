@@ -37,7 +37,8 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 df1 = pd.read_csv(path, delim_whitespace=True)
                 df1[ylabel] = [i/500 for i in df1[ylabel]]
             elif ylabel == "AUC":
-                path = glob.glob("{}/*stats1.txt".format(base_addr))[0]
+                path = glob.glob("{}/*stats1.txt".format(base_addr))
+                print(path)
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
             elif ylabel == "plabel_acc":
