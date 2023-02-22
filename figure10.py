@@ -30,13 +30,13 @@ exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym", "0.4_asym"]
 # text = ylabel
 text = "vs_proposed_" + ylabel
 
-df = final_df(Ylabel, ylabel, dataset, arch, write_df)
+df = final_df(Ylabel, ylabel, dataset, arch, write_df,
+              root=root_dir, read_dir=read_dir, exp_type_order=exp_type_order)
 print('making df finished')
 
 since = time.time()
 mk_fig(
-    df, Ylabel, dataset, text, col_wrap=col_wrap, hue_order=write_df,
-    f_name=f_name, root=root_dir, read_dir=read_dir, exp_type_order=exp_type_order
+    df, Ylabel, dataset, text, col_wrap=col_wrap, hue_order=write_df, f_name=f_name
 )
 print(f'elapsed time {time.time()-since:.4f}')
 
