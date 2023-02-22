@@ -44,7 +44,6 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 path = glob.glob("{}/*states1.txt".format(base_addr))[0]
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
-                df1[ylabel] = [i*100 for i in df1[ylabel]]
 
             df2 = pd.DataFrame(
                 {"Epoch": np.array(df1["Epoch"], dtype='int32'),
