@@ -11,6 +11,7 @@ def mk_csv(df, method, f_name, arch):
         # os.system(f"mkdir -p {folder}")
         os.system("mkdir -p {}".format(folder))
     df.to_csv('{}{}_{}_table.csv'.format(folder, arch, method))
+    print("save to {}{}_{}_table.csv".format(folder, arch, method))
 
 
 def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='average',
