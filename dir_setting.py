@@ -27,22 +27,22 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
     if mode == 'figure':
         def make_df_plus(method, base_addr, dataset, exp_type):
             if ylabel == 'Accuracy':
-                df1 = pd.read_csv(
-                    f"{base_addr}/{dataset}_{exp_type}_acc.txt", delim_whitespace=True
-                )
+                path = "{}/{}_{}_acc.txt".format(base_addr, dataset, exp_type)
+                assert os.path.isfile(path)
+                df1 = pd.read_csv(path, delim_whitespace=True)
             elif ylabel == 'Number_of_labeled_samples':
-                df1 = pd.read_csv(
-                    f"{base_addr}/{dataset}_{exp_type}_stats1.txt", delim_whitespace=True
-                )
+                path = "{}/{}_{}_stats1.txt".format(base_addr, dataset, exp_type)
+                assert os.path.isfile(path)
+                df1 = pd.read_csv(path, delim_whitespace=True)
                 df1[ylabel] = [i/500 for i in df1[ylabel]]
             elif ylabel == "AUC":
-                df1 = pd.read_csv(
-                    f"{base_addr}/{dataset}_{exp_type}_stats1.txt", delim_whitespace=True
-                )
+                path = "{}/{}_{}_stats1.txt".format(base_addr, dataset, exp_type)
+                assert os.path.isfile(path)
+                df1 = pd.read_csv(path, delim_whitespace=True)
             elif ylabel == "plabel_acc":
-                df1 = pd.read_csv(
-                    f"{base_addr}/{dataset}_{exp_type}_stats1.txt", delim_whitespace=True
-                )
+                path = "{}/{}_{}_stats1.txt".format(base_addr, dataset, exp_type)
+                assert os.path.isfile(path)
+                df1 = pd.read_csv(path, delim_whitespace=True)
                 df1[ylabel] = [i*100 for i in df1[ylabel]]
 
             df2 = pd.DataFrame(
