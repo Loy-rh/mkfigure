@@ -14,7 +14,7 @@ f_name = os.path.basename(__file__).split('.')[0]
 ylabel = 'AUC'
 Ylabel = 'AUC'
 # ylabel = 'plabel_acc'
-# Ylabel = 'Pseudo-Labels Accuracy (\%)'
+# Ylabel = 'Pseudo-Labels Accuracy (%)'
 
 
 dataset = 'cifar10'
