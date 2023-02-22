@@ -62,9 +62,9 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
 
         def last_ten_epoch(method, base_addr, dataset, exp_type):
             total = 0
-            df1 = pd.read_csv(
-                f"{base_addr}/{dataset}_{exp_type}_acc.txt", delim_whitespace=True
-            )
+            path = glob.glob("{}/*acc.txt".format(base_addr))[0]
+            assert os.path.isfile(path)
+            df1 = pd.read_csv(path, delim_whitespace=True)
             if opt == 'average':
                 total += df1[ylabel][-10:]
                 from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
