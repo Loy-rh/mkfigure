@@ -4,6 +4,15 @@ import os
 import glob
 
 
+def mk_csv(df, method, f_name, arch):
+    assert f_name is not None
+    folder = "./result/{}/".format(f_name)
+    if not os.path.exists(folder):
+        # os.system(f"mkdir -p {folder}")
+        os.system("mkdir -p {}".format(folder))
+    df.to_csv('{}{}_{}_table}.csv'.format(folder, arch, method))
+
+
 def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='average',
              f_name=None, root=None, read_dir=None, exp_type_order=None):
     df_list = []
@@ -26,7 +35,7 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 "0.4_asym": "Asymmetric 40%"}
 
     if mode == 'figure':
-        def make_df_plus(method, base_addr, dataset, exp_type):
+        def make_df_plus(method, base_addr, exp_type):
             if ylabel == 'Accuracy':
                 path = glob.glob("{}/*acc.txt".format(base_addr))[0]
                 assert os.path.isfile(path)
@@ -55,12 +64,12 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
     elif mode == 'last_ten_epoch':
         df = pd.DataFrame(
             np.arange(
-                len(exp_dict) * len(hue_order),
-                dtype=np.float).reshape(len(hue_order), (len(exp_dict))),
-            index=list(hue_order), columns=list(map(lambda key: exp_dict[key], exp_type_order))
+                len(exp_dict) * len(hue_order), dtype=np.float
+            ).reshape(len(hue_order), (len(exp_dict))),
+            index=["Best", "Last"], columns=list(map(lambda key: exp_dict[key], exp_type_order))
         )
 
-        def last_ten_epoch(method, base_addr, dataset, exp_type):
+        def last_ten_epoch(method, base_addr, exp_type):
             total = 0
             path = glob.glob("{}/*acc.txt".format(base_addr))[0]
             assert os.path.isfile(path)
@@ -69,8 +78,8 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
             from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
             # general rounding
             avg = Decimal(np.mean(total)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
-            df.at[method, "Last", exp_dict[exp_type]] = avg
-            df.at[method, "Best", exp_dict[exp_type]] = np.max(df1[ylabel])
+            df.at["Last", exp_dict[exp_type]] = avg
+            df.at["Best", exp_dict[exp_type]] = np.max(df1[ylabel])
         process = last_ten_epoch
     else:
         raise NotImplementedError
@@ -80,23 +89,26 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
         if method in hue_order:
             base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
                 root, read_dir[method], dataset, method, arch, exp_type2)
-            process(method, base_addr, dataset, exp_type)
-
+            process(method, base_addr, exp_type)
+            if mode == 'last_ten_epoch':
+                mk_csv(df, method, f_name, arch)
         method = 'Proposed'
         if method in hue_order:
             base_addr = "{}{}/log/{}_UPL_{}_{}/*".format(
                 root, read_dir[method], dataset, arch, exp_type2)
-            process(method, base_addr, dataset, exp_type)
+            process(method, base_addr, exp_type)
+            if mode == 'last_ten_epoch':
+                mk_csv(df, method, f_name, arch)
 
     if mode == 'figure':
         df = pd.concat(df_list)
         return df
-    elif mode == 'last_ten_epoch':
-        print(df)
-        if f_name:
-            folder = f"./result/{f_name}/"
-            if not os.path.exists(folder):
-                os.system(f"mkdir -p {folder}")
-            df.to_csv(f'{folder}{arch}_DivideMix_vs_proposed_table_{opt}.csv')
+    # elif mode == 'last_ten_epoch':
+    #     print(df)
+    #     if f_name:
+    #         folder = f"./result/{f_name}/"
+    #         if not os.path.exists(folder):
+    #             os.system(f"mkdir -p {folder}")
+    #         df.to_csv(f'{folder}{arch}_DivideMix_vs_proposed_table_{opt}.csv')
     else:
         raise NotImplementedError
