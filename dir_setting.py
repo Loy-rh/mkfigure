@@ -103,7 +103,8 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
     if mode == 'figure':
         df = pd.concat(df_list)
         return df
-    # elif mode == 'last_ten_epoch':
+    elif mode == 'last_ten_epoch':
+        pass
     #     print(df)
     #     if f_name:
     #         folder = f"./result/{f_name}/"
