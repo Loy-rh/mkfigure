@@ -4,7 +4,7 @@ import os
 
 
 def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='average',
-             exp_type_order=None, f_name=None, root=None, read_dir=None):
+             f_name=None, root=None, read_dir=None, exp_type_order=None):
     df_list = []
 
     # change the order of the graphs by changing this exp_type order
