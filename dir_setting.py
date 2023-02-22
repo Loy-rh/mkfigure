@@ -85,21 +85,35 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
     else:
         raise NotImplementedError
 
-    for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
-        method = 'DivideMix'
-        if method in hue_order:
-            base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
-                root, read_dir[method], dataset, method, arch, exp_type2)
-            process(method, base_addr, exp_type)
-            if mode == 'last_ten_epoch':
-                mk_csv(df, method, f_name, arch)
-        method = 'Proposed'
-        if method in hue_order:
-            base_addr = "{}{}/log/{}_UPL_{}_{}/*".format(
-                root, read_dir[method], dataset, arch, exp_type2)
-            process(method, base_addr, exp_type)
-            if mode == 'last_ten_epoch':
-                mk_csv(df, method, f_name, arch)
+    # for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
+    #     method = 'DivideMix'
+    #     if method in hue_order:
+    #         base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
+    #             root, read_dir[method], dataset, method, arch, exp_type2)
+    #         process(method, base_addr, exp_type)
+    #         if mode == 'last_ten_epoch':
+    #     method = 'Proposed'
+    #     if method in hue_order:
+    #         base_addr = "{}{}/log/{}_UPL_{}_{}/*".format(
+    #             root, read_dir[method], dataset, arch, exp_type2)
+    #         process(method, base_addr, exp_type)
+    #         if mode == 'last_ten_epoch':
+    #             mk_csv(df, method, f_name, arch)
+    for method in hue_order:
+        if method == 'DivideMix':
+            for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
+                base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
+                    root, read_dir[method], dataset, method, arch, exp_type2)
+                process(method, base_addr, exp_type)
+                if mode == 'last_ten_epoch':
+                    mk_csv(df, method, f_name, arch)
+        if method == 'Proposed':
+            for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
+                base_addr = "{}{}/log/{}_UPL_{}_{}/*".format(
+                    root, read_dir[method], dataset, arch, exp_type2)
+                process(method, base_addr, exp_type)
+                if mode == 'last_ten_epoch':
+                    mk_csv(df, method, f_name, arch)
 
     if mode == 'figure':
         df = pd.concat(df_list)
