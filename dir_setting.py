@@ -65,14 +65,12 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
             path = glob.glob("{}/*acc.txt".format(base_addr))[0]
             assert os.path.isfile(path)
             df1 = pd.read_csv(path, delim_whitespace=True)
-            if opt == 'average':
-                total += df1[ylabel][-10:]
-                from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
-                # general rounding
-                avg = Decimal(np.mean(total)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
-                df.at[method, exp_dict[exp_type]] = avg
-            elif opt == 'best':
-                df.at[method, exp_dict[exp_type]] = np.max(df1[ylabel])
+            total += df1[ylabel][-10:]
+            from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
+            # general rounding
+            avg = Decimal(np.mean(total)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+            df.at[method, "Last", exp_dict[exp_type]] = avg
+            df.at[method, "Best", exp_dict[exp_type]] = np.max(df1[ylabel])
         process = last_ten_epoch
     else:
         raise NotImplementedError
