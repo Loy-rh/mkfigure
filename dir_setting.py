@@ -20,20 +20,26 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
 
     # change the order of the graphs by changing this exp_type order
     exp_type_order2 = []
+    exp_dict = {}
     for type in exp_type_order:
         if type == "0.2_sym":
             exp_type_order2.append("sym_20")
+            exp_dict.update({"0.2_sym": "Symmetric 20%"})
         elif type == "0.5_sym":
             exp_type_order2.append("sym_50")
+            exp_dict.update({"0.5_sym": "Symmetric 50%"})
         elif type == "0.8_sym":
             exp_type_order2.append("sym_80")
+            exp_dict.update({"0.8_sym": "Symmetric 80%"})
         elif type == "0.9_sym":
             exp_type_order2.append("sym_90")
+            exp_dict.update({"0.9_sym": "Symmetric 90%"})
         elif type == "0.4_asym":
             exp_type_order2.append("asym_40")
-    exp_dict = {"0.2_sym": "Symmetric 20%", "0.5_sym": "Symmetric 50%",
-                "0.8_sym": "Symmetric 80%", "0.9_sym": "Symmetric 90%",
-                "0.4_asym": "Asymmetric 40%"}
+            exp_dict.update({"0.4_asym": "Asymmetric 40%"})
+    # exp_dict = {"0.2_sym": "Symmetric 20%", "0.5_sym": "Symmetric 50%",
+    #             "0.8_sym": "Symmetric 80%", "0.9_sym": "Symmetric 90%",
+    #             "0.4_asym": "Asymmetric 40%"}
 
     if mode == 'figure':
         def make_df_plus(method, base_addr, exp_type):
