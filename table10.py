@@ -20,8 +20,8 @@ write_df = ["DivideMix", "CRAS"]
 root_dir = '../saved'
 read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
 
-# exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym", "0.4_asym"]
-exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
+exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym", "0.4_asym"]
+# exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
 
 df = final_df(
     Ylabel, ylabel, dataset, arch, write_df, mode='last_ten_epoch',
