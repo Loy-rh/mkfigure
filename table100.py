@@ -8,7 +8,6 @@ ylabel = "Accuracy"
 Ylabel = "Test accuracy"
 
 dataset = 'cifar100'
-# arch = 'resnet18'
 arch = 'PreactResNet18'
 
 # write_df = ["DivideMix", "Proposed"]
