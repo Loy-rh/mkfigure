@@ -15,7 +15,7 @@ ylabel = 'AUC'
 Ylabel = 'AUC'
 
 dataset = 'cifar100'
-arch = 'PreactResNet18'
+arch = 'PreActResNet18'
 # col_wrap = 2
 col_wrap = 4  # 2x2
 write_df = ["DivideMix", "CRAS"]
