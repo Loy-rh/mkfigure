@@ -21,9 +21,12 @@ dataset = 'cifar10'
 arch = 'PreActResNet18'
 # col_wrap = 2  # 2x2
 col_wrap = 4  # 1x4
-write_df = ["DivideMix", "Proposed"]
-root_dir = '../UPL/saved'
-read_dir = {"DivideMix": '/dividemix', "Proposed": '/UPL'}
+# write_df = ["DivideMix", "Proposed"]
+# root_dir = '../UPL/saved'
+# read_dir = {"DivideMix": '/dividemix', "Proposed": '/UPL'}
+write_df = ["DivideMix", "CRAS"]
+root_dir = '..saved'
+read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
 
 # exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym", "0.4_asym"]
 exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
