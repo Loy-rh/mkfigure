@@ -8,7 +8,7 @@ ylabel = "Accuracy"
 Ylabel = "Test accuracy"
 
 dataset = 'cifar100'
-arch = 'PreactResNet18'
+arch = 'PreActResNet18'
 
 # write_df = ["DivideMix", "Proposed"]
 # root_dir = '../UPL/saved'

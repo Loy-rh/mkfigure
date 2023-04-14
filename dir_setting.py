@@ -124,7 +124,6 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_CRAS_{}_{}/*".format(
                     root, read_dir[method], dataset, arch, exp_type2)
-                print(base_addr)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch)
@@ -132,7 +131,6 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_CRAS_{}_{}/*".format(
                     root, read_dir[method], dataset, arch, exp_type2)
-                print(base_addr)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch)
