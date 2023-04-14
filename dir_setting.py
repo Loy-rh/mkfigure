@@ -47,7 +47,6 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 df1 = pd.read_csv(path, delim_whitespace=True)
                 df1[ylabel] = [i/500 for i in df1[ylabel]]
             elif ylabel == "AUC":
-                print(glob.glob("{}/*states1.txt".format(base_addr)))
                 path = glob.glob("{}/*states1.txt".format(base_addr))[0]
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
@@ -105,6 +104,7 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
                     root, read_dir[method], dataset, method, arch, exp_type2)
+                print(base_addr)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch)
@@ -120,6 +120,7 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 base_addr = "{}{}/log/{}_CRAS_{}_{}/*".format(
                     root, read_dir[method], dataset, arch, exp_type2)
                 process(method, base_addr, exp_type)
+                print(base_addr)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch)
 
