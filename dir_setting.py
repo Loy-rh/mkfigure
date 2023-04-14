@@ -107,14 +107,21 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch)
-        if method == 'Proposed':
+        elif method == 'Proposed':
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_UPL_{}_{}/*".format(
                     root, read_dir[method], dataset, arch, exp_type2)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch)
-        if method == 'CRAS':
+        elif method == 'CRAS':
+            for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
+                base_addr = "{}{}/log/{}_CRAS_{}_{}/*".format(
+                    root, read_dir[method], dataset, arch, exp_type2)
+                process(method, base_addr, exp_type)
+            if mode == 'last_ten_epoch':
+                mk_csv(df, method, f_name, arch)
+        else:
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_CRAS_{}_{}/*".format(
                     root, read_dir[method], dataset, arch, exp_type2)

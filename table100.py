@@ -10,11 +10,17 @@ Ylabel = "Test accuracy"
 dataset = 'cifar100'
 # arch = 'resnet18'
 arch = 'PreactResNet18'
-option = 'best'
-# write_df = ('DivideMix', 'SimCLR+DivideMix')
-write_df = ('DivideMix', 'Proposed')
+
+# write_df = ["DivideMix", "Proposed"]
+# root_dir = '../UPL/saved'
+# read_dir = {"DivideMix": '/dividemix', "Proposed": '/UPL'}
+write_df = ["CRAS", "wELR"]
+root_dir = '../saved'
+read_dir = {"CRAS": '/CRAS', "wELR": '/wELR'}
+
+exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym", "0.4_asym"]
 
 df = final_df(
-    Ylabel, ylabel, dataset, arch, write_df, mode='last_ten_epoch', f_name=f_name
-    # Ylabel, ylabel, dataset, arch, write_df, mode='last_ten_epoch', opt=option, f_name=f_name
+    Ylabel, ylabel, dataset, arch, write_df, mode='last_ten_epoch',
+    f_name=f_name, root=root_dir, read_dir=read_dir, exp_type_order=exp_type_order
 )
