@@ -4,14 +4,14 @@ import os
 import glob
 
 
-def mk_csv(df, method, f_name, arch):
+def mk_csv(df, method, f_name, arch, ylabel):
     assert f_name is not None
     folder = "./result/{}/".format(f_name)
     if not os.path.exists(folder):
         # os.system(f"mkdir -p {folder}")
         os.system("mkdir -p {}".format(folder))
-    df.to_csv('{}{}_{}_table.csv'.format(folder, arch, method))
-    print("save to {}{}_{}_table.csv".format(folder, arch, method))
+    df.to_csv('{}{}_{}_{}_table.csv'.format(folder, arch, method, ylabel))
+    print("save to {}{}_{}_{}_table.csv".format(folder, arch, method, ylabel))
 
 
 def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='average',
@@ -78,9 +78,14 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
 
         def last_ten_epoch(method, base_addr, exp_type):
             total = 0
-            path = glob.glob("{}/*acc.txt".format(base_addr))[0]
-            assert os.path.isfile(path)
-            df1 = pd.read_csv(path, delim_whitespace=True)
+            if ylabel == 'Accuracy':
+                path = glob.glob("{}/*acc.txt".format(base_addr))[0]
+                assert os.path.isfile(path)
+                df1 = pd.read_csv(path, delim_whitespace=True)
+            elif ylabel == "AUC":
+                path = glob.glob("{}/*states1.txt".format(base_addr))[0]
+                assert os.path.isfile(path)
+                df1 = pd.read_csv(path, delim_whitespace=True)
             total += df1[ylabel][-10:]
             from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
             # general rounding
@@ -112,28 +117,28 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                     root, read_dir[method], dataset, method, arch, exp_type2)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
-                mk_csv(df, method, f_name, arch)
+                mk_csv(df, method, f_name, arch, ylabel)
         elif method == 'Proposed':
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_UPL_{}_{}/*".format(
                     root, read_dir[method], dataset, arch, exp_type2)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
-                mk_csv(df, method, f_name, arch)
+                mk_csv(df, method, f_name, arch, ylabel)
         elif method == 'CRAS':
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_CRAS_{}_{}/*".format(
                     root, read_dir[method], dataset, arch, exp_type2)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
-                mk_csv(df, method, f_name, arch)
+                mk_csv(df, method, f_name, arch, ylabel)
         else:
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_CRAS_{}_{}/*".format(
                     root, read_dir[method], dataset, arch, exp_type2)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
-                mk_csv(df, method, f_name, arch)
+                mk_csv(df, method, f_name, arch, ylabel)
 
     if mode == 'figure':
         df = pd.concat(df_list)
