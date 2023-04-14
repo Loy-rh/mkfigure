@@ -4,8 +4,11 @@ from dir_setting import final_df
 f_name = os.path.basename(__file__).split('.')[0]
 
 # setting parameter
-ylabel = "Accuracy"
-Ylabel = "Test accuracy"
+# ylabel = "Accuracy"
+# Ylabel = "Test accuracy"
+ylabel = 'AUC'
+Ylabel = 'AUC'
+
 
 dataset = 'cifar10'
 arch = 'PreActResNet18'
