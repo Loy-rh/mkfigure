@@ -52,8 +52,8 @@ def mk_fig(
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
             # g.set(xticks=[0,50,100,150,200])
             g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
-            if dataset == 'cifar100':
-                g.set(yticks=[0, 10, 20, 30, 40, 50, 60, 70, 80])
+            # if dataset == 'cifar100':
+            #     g.set(yticks=[0, 10, 20, 30, 40, 50, 60, 70, 80])
             figsize = (16, 4)
         elif col_wrap == 2:
             g.fig.axes[0].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
