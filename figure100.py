@@ -20,7 +20,7 @@ arch = 'PreactResNet18'
 col_wrap = 4  # 2x2
 write_df = ["DivideMix", "CRAS"]
 root_dir = '../saved'
-read_dir = {"DivideMix": '/dividemix', "CRAS": '/CRAS'}
+read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
 
 exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
 
