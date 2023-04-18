@@ -10,7 +10,7 @@ f_name = os.path.basename(__file__).split('.')[0]
 # ylabel = "Accuracy"
 # Ylabel = 'Test accuracy'
 ylabel = 'Number_of_labeled_samples'
-Ylabel = 'Rate of unlabeled samples'
+Ylabel = 'Rate of labeled samples'
 # ylabel = 'AUC'
 # Ylabel = 'AUC'
 
