@@ -21,9 +21,9 @@ col_wrap = 4  # 2x2
 root_dir = '../saved'
 # write_df = ["DivideMix", "CRAS"]
 # read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
-write_df = ["DivideMix", "CRAS", "CRAS w/o CR", "CRAS w/o AWL"]
-read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS',
-            "CRAS w/o CR": "/wo_CELR", "CRAS w/o AWL": "/wo_weight"}
+write_df = ["DivideMix", "CRAS w/o CR", "CRAS w/o AWL", "CRAS"]
+read_dir = {"DivideMix": '/DivideMix',
+            "CRAS w/o CR": "/wo_CELR", "CRAS w/o AWL": "/wo_weight", "CRAS": '/CRAS'}
 
 
 exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
