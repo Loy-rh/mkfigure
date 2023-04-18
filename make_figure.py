@@ -31,7 +31,7 @@ def mk_fig(
         print(df.tail(10))
         plt.grid(True)
 
-        kws = dict(linewidth=1.)
+        kws = dict(linewidth=.5)
         g = sns.FacetGrid(
             df, col='Noise Type', hue='Method', hue_order=hue_order,
             palette=palette, col_wrap=col_wrap
