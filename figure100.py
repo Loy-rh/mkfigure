@@ -7,20 +7,24 @@ from dir_setting import final_df
 f_name = os.path.basename(__file__).split('.')[0]
 
 # setting parameter
-ylabel = "Accuracy"
-Ylabel = 'Test accuracy'
+# ylabel = "Accuracy"
+# Ylabel = 'Test accuracy'
 # ylabel = 'Number_of_labeled_samples'
 # Ylabel = 'Rate of unlabeled samples'
-# ylabel = 'AUC'
-# Ylabel = 'AUC'
+ylabel = 'AUC'
+Ylabel = 'AUC'
 
 dataset = 'cifar100'
 arch = 'PreActResNet18'
 # col_wrap = 2
 col_wrap = 4  # 2x2
-write_df = ["DivideMix", "CRAS"]
 root_dir = '../saved'
-read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
+# write_df = ["DivideMix", "CRAS"]
+# read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
+write_df = ["DivideMix", "CRAS", "CRAS w/o CR", "CRAS w/o AWL"]
+read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS',
+            "CRAS w/o CR": "/wo_CR", "CRAS w/o AWL": "/wo_weight"}
+
 
 exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
 
