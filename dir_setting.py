@@ -79,10 +79,12 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
         def last_ten_epoch(method, base_addr, exp_type):
             total = 0
             if ylabel == 'Accuracy':
+                assert len(glob.glob("{}/*acc.txt".format(base_addr))) != 0
                 path = glob.glob("{}/*acc.txt".format(base_addr))[0]
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
             elif ylabel == "AUC":
+                assert len(glob.glob("{}/*acc.txt".format(base_addr))) != 0
                 path = glob.glob("{}/*states1.txt".format(base_addr))[0]
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
