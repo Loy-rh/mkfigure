@@ -56,7 +56,7 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 path = glob.glob("{}/*states1.txt".format(base_addr))[0]
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
-            elif ylabel == "plabel_acc":
+            elif ylabel == "plabel_acc" or ylabel == "plabel_acc_th":
                 path = glob.glob("{}/*states1.txt".format(base_addr))[0]
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
