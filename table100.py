@@ -18,7 +18,7 @@ arch = 'PreActResNet18'
 # write_df = ["CRAS", "wELR"]
 # root_dir = '../saved'
 # read_dir = {"CRAS": '/CRAS', "wELR": '/wELR'}
-root_dir = '../UPL/saved'
+root_dir = '../UPLplus/saved'
 write_df = ["UPL", "UPLplus"]
 read_dir = {"UPL": "/UPL", "UPLplus": "/UPL"}
 
