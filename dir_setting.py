@@ -52,11 +52,11 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
                 df1[ylabel] = [i/500 for i in df1[ylabel]]
-            elif ylabel == "AUC":
-                path = glob.glob("{}/*states1.txt".format(base_addr))[0]
-                assert os.path.isfile(path)
-                df1 = pd.read_csv(path, delim_whitespace=True)
-            elif ylabel == "plabel_acc" or ylabel == "plabel_acc_th":
+            # elif ylabel == "AUC":
+            #     path = glob.glob("{}/*states1.txt".format(base_addr))[0]
+            #     assert os.path.isfile(path)
+            #     df1 = pd.read_csv(path, delim_whitespace=True)
+            else:
                 path = glob.glob("{}/*states1.txt".format(base_addr))[0]
                 assert os.path.isfile(path)
                 df1 = pd.read_csv(path, delim_whitespace=True)
