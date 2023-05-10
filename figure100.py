@@ -17,14 +17,14 @@ ylabel = 'Precision'
 Ylabel = 'Precision'
 # ylabel = 'plabel_acc'
 # Ylabel = 'Pseudo-Labels Accuracy'
-ylabel = 'plabel_acc_th'
-Ylabel = 'Pseudo-Labels Accuracy'
+# ylabel = 'plabel_acc_th'
+# Ylabel = 'Pseudo-Labels Accuracy'
 
 dataset = 'cifar100'
 arch = 'PreActResNet18'
 # col_wrap = 2
 col_wrap = 4  # 2x2
-root_dir = '../UPLplus/saved'
+root_dir = './saved'
 # write_df = ["DivideMix", "CRAS"]
 # read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
 write_df = ["UPL", "UPLplus"]
