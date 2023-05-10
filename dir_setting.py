@@ -72,7 +72,7 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
         df = pd.DataFrame(
             np.arange(
                 len(exp_dict) * len(hue_order), dtype=np.float
-            ).reshape(2, (len(exp_dict))),
+            ).reshape(2, len(exp_dict)),
             index=["Best", "Last"], columns=list(map(lambda key: exp_dict[key], exp_type_order))
         )
 
