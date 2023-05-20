@@ -7,14 +7,14 @@ from dir_setting import final_df
 f_name = os.path.basename(__file__).split('.')[0]
 
 # setting parameter
-ylabel = "Accuracy"
-Ylabel = 'Test accuracy'
+# ylabel = "Accuracy"
+# Ylabel = 'Test accuracy'
 # ylabel = 'Number_of_labeled_samples'
 # Ylabel = 'Rate of labeled samples'
 # ylabel = 'AUC'
 # Ylabel = 'AUC'
-# ylabel = 'Precision'
-# Ylabel = 'Precision'
+ylabel = 'Precision'
+Ylabel = 'Precision'
 # ylabel = 'plabel_acc'
 # Ylabel = 'Pseudo-Labels Accuracy'
 # ylabel = 'plabel_acc_th'
@@ -27,8 +27,9 @@ col_wrap = 4  # 2x2
 root_dir = './saved'
 # write_df = ["DivideMix", "CRAS"]
 # read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
-write_df = ["UPL", "UPLplus"]
-read_dir = {"UPL": "/UPL", "UPLplus": "/UPLplus"}
+root_dir = './saved'
+write_df = ["UPLplus", "Proposed"]
+read_dir = {"UPLplus": "/UPLplus", "Proposed": "/Proposed"}
 
 
 exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
