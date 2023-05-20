@@ -9,14 +9,14 @@ f_name = os.path.basename(__file__).split('.')[0]
 # setting parameter
 # ylabel = "Accuracy"
 # Ylabel = 'Test accuracy'
-# ylabel = 'Number_of_labeled_samples'
-# Ylabel = 'Rate of labeled samples'
+ylabel = 'Number_of_labeled_samples'
+Ylabel = 'Rate of labeled samples'
 # ylabel = 'AUC'
 # Ylabel = 'AUC'
 # ylabel = 'Precision'
 # Ylabel = 'Precision'
-ylabel = 'plabel_acc'
-Ylabel = 'Pseudo-Labels Accuracy'
+# ylabel = 'plabel_acc'
+# Ylabel = 'Pseudo-Labels Accuracy'
 # ylabel = 'plabel_acc_th'
 # Ylabel = 'Pseudo-Labels Accuracy'
 
