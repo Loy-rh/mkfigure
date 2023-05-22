@@ -47,7 +47,7 @@ def mk_fig(
         lg.remove()
 
         if col_wrap == 4:
-            if Ylabel == 'Test accuracy' or Ylabel == 'Pseudo-Labels Accuracy (%)':
+            if legend:
                 g.fig.axes[1].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
             # g.set(xticks=[0,50,100,150,200])
@@ -56,8 +56,9 @@ def mk_fig(
             #     g.set(yticks=[0, 10, 20, 30, 40, 50, 60, 70, 80])
             figsize = (16, 4)
         elif col_wrap == 2:
-            g.fig.axes[0].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
-                                 ncol=len(hue_order), frameon=True, borderaxespad=3)
+            if legend
+                g.fig.axes[0].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
+                                     ncol=len(hue_order), frameon=True, borderaxespad=3)
             g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
             figsize = (12, 8)
         else:

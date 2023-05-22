@@ -27,7 +27,7 @@ col_wrap = 4  # 2x2
 root_dir = './saved'
 # write_df = ["DivideMix", "CRAS"]
 # read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
-root_dir = './saved'
+# root_dir = './saved'
 write_df = ["DivideMix", "Proposed"]
 read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
 
