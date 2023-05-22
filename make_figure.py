@@ -48,6 +48,8 @@ def mk_fig(
 
         if col_wrap == 4:
             if legend:
+                # g.fig.axes[1].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
+                #                      ncol=len(hue_order), frameon=True, borderaxespad=3)
                 g.fig.axes[1].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
             # g.set(xticks=[0,50,100,150,200])
