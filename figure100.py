@@ -13,10 +13,10 @@ f_name = os.path.basename(__file__).split('.')[0]
 # Ylabel = 'Rate of labeled samples'
 # ylabel = 'AUC'
 # Ylabel = 'AUC'
-# ylabel = 'Precision'
-# Ylabel = 'Precision'
-ylabel = 'plabel_acc'
-Ylabel = 'Pseudo-Labels Accuracy'
+ylabel = 'Precision'
+Ylabel = 'Precision'
+# ylabel = 'plabel_acc'
+# Ylabel = 'Pseudo-Labels Accuracy'
 # ylabel = 'plabel_acc_th'
 # Ylabel = 'Pseudo-Labels Accuracy'
 
@@ -31,7 +31,7 @@ root_dir = './saved'
 write_df = ["DivideMix", "Proposed"]
 read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
 
-legend = True
+legend = False
 
 
 exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
