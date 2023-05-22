@@ -62,7 +62,8 @@ def mk_fig(
                 g.fig.axes[0].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
             g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
-            figsize = (10, 6)
+            g.set(yticks=[10, 20, 30, 40, 50, 60, 70])
+            figsize = (12, 6)
         else:
             raise NotImplementedError
 
