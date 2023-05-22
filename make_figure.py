@@ -18,7 +18,7 @@ dt_s = datetime.now().strftime('%H%M%S')
 
 def mk_fig(
         df, Ylabel, dataset, text, col_wrap=4, ylim=None, hue_order=('standard', 'finetune'),
-        palette=None, f_name=None
+        palette=None, f_name=None, legend=False
 ):
 
     if col_wrap == 1:

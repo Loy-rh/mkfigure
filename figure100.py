@@ -31,6 +31,8 @@ root_dir = './saved'
 write_df = ["DivideMix", "Proposed"]
 read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
 
+legend = True
+
 
 # exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
 exp_type_order = ["0.8_sym", "0.9_sym"]
@@ -44,7 +46,7 @@ print('making df finished')
 
 since = time.time()
 mk_fig(
-    df, Ylabel, dataset, text, col_wrap=col_wrap, hue_order=write_df, f_name=f_name
+    df, Ylabel, dataset, text, col_wrap=col_wrap, hue_order=write_df, f_name=f_name, legend=legend
 )
 print(f'elapsed time {time.time()-since:.4f}')
 
