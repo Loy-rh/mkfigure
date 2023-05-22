@@ -63,7 +63,7 @@ def mk_fig(
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
             g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
             # g.set(yticks=[10, 20, 30, 40, 50, 60, 70])
-            figsize = (12, 6)
+            figsize = (12, 8)
         else:
             raise NotImplementedError
 
