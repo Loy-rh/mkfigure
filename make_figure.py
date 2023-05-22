@@ -26,12 +26,12 @@ def mk_fig(
         plt.grid(True)
         plt.xlabel('Epoch')
         plt.ylabel(Ylabel)
-        figsize=(4, 4)
+        # figsize=(4, 4)
     else:
         print(df.tail(10))
         plt.grid(True)
 
-        kws = dict(linewidth=.5)
+        kws = dict(linewidth=.8)
         g = sns.FacetGrid(
             df, col='Noise Type', hue='Method', hue_order=hue_order,
             palette=palette, col_wrap=col_wrap, height=5
