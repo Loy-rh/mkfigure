@@ -18,7 +18,7 @@ dt_s = datetime.now().strftime('%H%M%S')
 
 def mk_fig(
         df, Ylabel, dataset, text, col_wrap=4, ylim=None, hue_order=('standard', 'finetune'),
-        palette=None, f_name=None, legend=False
+        palette=None, f_name=None, legend=False, epoch=300
 ):
 
     if col_wrap == 1:
@@ -53,7 +53,10 @@ def mk_fig(
                 g.fig.axes[1].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
             # g.set(xticks=[0,50,100,150,200])
-            g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
+            if epoch == 300:
+                g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
+            else:
+                g.set(xticks=[0, 20, 40, 60, 80, 100])
             # if dataset == 'cifar100':
             #     g.set(yticks=[0, 10, 20, 30, 40, 50, 60, 70, 80])
             # figsize = (16, 4)
@@ -61,7 +64,10 @@ def mk_fig(
             if legend:
                 g.fig.axes[0].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
-            g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
+            if epoch == 300:
+                g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
+            else:
+                g.set(xticks=[0, 20, 40, 60, 80, 100])
             # g.set(yticks=[10, 20, 30, 40, 50, 60, 70])
             # figsize = (12, 8)
         else:
