@@ -34,6 +34,9 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
         elif type == "0.9_sym":
             exp_type_order2.append("sym_90")
             exp_dict.update({"0.9_sym": "Symmetric 90%"})
+        elif type == "0.2_asym":
+            exp_type_order2.append("asym_20")
+            exp_dict.update({"0.2_asym": "Asymmetric 20%"})
         elif type == "0.4_asym":
             exp_type_order2.append("asym_40")
             exp_dict.update({"0.4_asym": "Asymmetric 40%"})
