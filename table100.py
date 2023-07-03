@@ -12,15 +12,15 @@ Ylabel = "Test accuracy"
 dataset = 'cifar100'
 arch = 'PreActResNet18'
 
-write_df = ["DivideMix", "Proposed"]
-root_dir = './saved'
-read_dir = {"DivideMix": '/DivideMix', "Proposed": '/Proposed'}
+# write_df = ["DivideMix", "Proposed"]
 # root_dir = './saved'
-# write_df = ["UPLplus", "Proposed"]
-# read_dir = {"UPLplus": "/UPLplus", "Proposed": "/Proposed"}
+# read_dir = {"DivideMix": '/DivideMix', "Proposed": '/Proposed'}
+root_dir = './saved'
+write_df = ["Proposed", "Single"]
+read_dir = {"Proposed": "/UPL", "Single": "/single"}
 
-exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym", "0.4_asym"]
-# exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
+# exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym", "0.4_asym"]
+exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
 # exp_type_order = ["0.2_sym", "0.9_sym"]
 
 df = final_df(
