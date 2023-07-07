@@ -16,8 +16,8 @@ arch = 'PreActResNet18'
 # root_dir = './saved'
 # read_dir = {"DivideMix": '/DivideMix', "Proposed": '/Proposed'}
 root_dir = './saved'
-write_df = ["Proposed", "single"]
-read_dir = {"Proposed": "/UPL", "single": "/single"}
+write_df = ["Proposed", "databias"]
+read_dir = {"Proposed": "/UPL", "databias": "/databias"}
 
 # exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym", "0.4_asym"]
 exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
