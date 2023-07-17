@@ -60,7 +60,7 @@ def mk_fig(
                 g.set(xticks=[0, 20, 40, 60, 80, 100])
             # if dataset == 'cifar100':
             #     g.set(yticks=[0, 10, 20, 30, 40, 50, 60, 70, 80])
-            figsize = (16, 4)
+            figsize = (18, 4)
         elif col_wrap == 2:
             if legend:
                 g.fig.axes[0].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
