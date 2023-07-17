@@ -13,10 +13,10 @@ f_name = os.path.basename(__file__).split('.')[0]
 # Ylabel = 'Rate of labeled samples'
 # ylabel = 'AUC'
 # Ylabel = 'AUC'
-ylabel = 'Precision'
-Ylabel = 'Precision'
-# ylabel = 'plabel_acc'
-# Ylabel = 'Pseudo-Labels Accuracy'
+# ylabel = 'Precision'
+# Ylabel = 'Precision'
+ylabel = 'plabel_acc'
+Ylabel = 'Pseudo-Labels Accuracy'
 # ylabel = 'plabel_acc_th'
 # Ylabel = 'Pseudo-Labels Accuracy'
 
@@ -34,10 +34,10 @@ write_df = ["DivideMix"]
 read_dir = {"DivideMix": "/DivideMix"}
 names = ["DivideMix"]
 
-legend = False
+legend = True 
 
-# exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
-exp_type_order = ["0.2_sym",  "0.9_sym"]
+exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
+# exp_type_order = ["0.2_sym",  "0.9_sym"]
 # exp_type_order = ["0.2_sym", "0.2_asym", "0.4_sym", "0.4_asym"]
 
 # text = ylabel
@@ -50,7 +50,7 @@ print('making df finished')
 since = time.time()
 mk_fig(
     df, Ylabel, dataset, text, col_wrap=col_wrap, hue_order=write_df,
-    f_name=f_name, legend=legend, epoch=300, ylim=[0.2, 1.0]
+    f_name=f_name, legend=legend, epoch=300, ylim=[10, 70]
 )
 print(f'elapsed time {time.time()-since:.4f}')
 
