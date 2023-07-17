@@ -22,8 +22,8 @@ Ylabel = 'Precision'
 
 dataset = 'cifar100'
 arch = 'PreActResNet18'
-col_wrap = 2
-# col_wrap = 4  # 2x2
+# col_wrap = 2
+col_wrap = 4  # 2x2
 root_dir = './saved'
 # write_df = ["DivideMix", "CRAS"]
 # read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
