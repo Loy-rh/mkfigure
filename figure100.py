@@ -49,7 +49,7 @@ print('making df finished')
 since = time.time()
 mk_fig(
     df, Ylabel, dataset, text, col_wrap=col_wrap, hue_order=write_df,
-    f_name=f_name, legend=legend, epoch=100
+    f_name=f_name, legend=legend, epoch=300
 )
 print(f'elapsed time {time.time()-since:.4f}')
 
