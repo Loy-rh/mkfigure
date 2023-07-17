@@ -56,6 +56,7 @@ def mk_fig(
             # g.set(xticks=[0,50,100,150,200])
             if epoch == 300:
                 g.set(xticks=range(0, 301, 50))
+                g.set(yticks=range(10, 71, 20))
             else:
                 g.set(xticks=[0, 20, 40, 60, 80, 100])
             # if dataset == 'cifar100':
