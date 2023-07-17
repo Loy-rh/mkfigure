@@ -40,7 +40,7 @@ def mk_fig(
         g = g.map(sns.lineplot, 'Epoch', Ylabel, **kws).add_legend()
         g.set_titles("{col_name}")
         g.fig.subplots_adjust(wspace=0.1)
-        g.set(ylim=ylim, font_scale=2.)
+        g.set(ylim=ylim)
 
         # the process required to create a legend that is similar to the original paper
         lg = g.fig.legends[0]
@@ -74,6 +74,7 @@ def mk_fig(
         else:
             raise NotImplementedError
 
+    g.tick_params(labelsize=24)
     folder = f"./result/{f_name}/{dt_d + dt_s}"
     if not os.path.exists(folder):
         os.system(f"mkdir -p {folder}")
