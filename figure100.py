@@ -42,7 +42,7 @@ exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
 # text = ylabel
 text = "vs_proposed_" + ylabel
 
-df = final_df(Ylabel, ylabel, dataset, arch, write_df,
+df = final_df(Ylabel, ylabel, dataset, arch, write_df, names
               root=root_dir, read_dir=read_dir, exp_type_order=exp_type_order)
 print('making df finished')
 
