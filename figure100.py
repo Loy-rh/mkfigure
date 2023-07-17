@@ -32,6 +32,7 @@ root_dir = './saved'
 # read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
 write_df = ["DivideMix", "Proposed"]
 read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
+names = ["DivideMix", "UPLplus"]
 
 legend = False
 
