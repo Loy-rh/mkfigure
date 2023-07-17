@@ -30,8 +30,8 @@ root_dir = './saved'
 # root_dir = './saved'
 # write_df = ["DivideMix", "Proposed"]
 # read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
-write_df = ["Standard"]
-read_dir = {"Standard": "/std"}
+write_df = ["DivideMix", "Proposed"]
+read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
 
 legend = False
 
