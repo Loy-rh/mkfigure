@@ -8,7 +8,7 @@ import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
 # from figure import result_sum
 # sns.set(font_scale=1.5)
-sns.set(font_scale=2)
+sns.set(font_scale=2.5)
 matplotlib.rcParams['pdf.fonttype'] = 42
 matplotlib.rcParams['ps.fonttype'] = 42
 plt.rcParams['font.family'] = 'Times New Roman'
@@ -18,7 +18,7 @@ dt_s = datetime.now().strftime('%H%M%S')
 
 
 def mk_fig(
-        df, Ylabel, dataset, text, col_wrap=4, ylim=None, hue_order=('standard', 'finetune'),
+        df, Ylabel, dataset, text, col_wrap=4, ylim=None, hue_order=('standard',  'finetune'),
         palette=None, f_name=None, legend=False, epoch=300
 ):
 
@@ -74,6 +74,7 @@ def mk_fig(
         else:
             raise NotImplementedError
 
+    g.setp(font_size=24)
     folder = f"./result/{f_name}/{dt_d + dt_s}"
     if not os.path.exists(folder):
         os.system(f"mkdir -p {folder}")
