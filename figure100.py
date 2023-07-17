@@ -22,21 +22,22 @@ Ylabel = 'Precision'
 
 dataset = 'cifar100'
 arch = 'PreActResNet18'
-# col_wrap = 2
-col_wrap = 4  # 2x2
+col_wrap = 2
+# col_wrap = 4  # 2x2
 root_dir = './saved'
 # write_df = ["DivideMix", "CRAS"]
 # read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
 # root_dir = './saved'
 # write_df = ["DivideMix", "Proposed"]
 # read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
-write_df = ["DivideMix", "Proposed"]
-read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
-names = ["DivideMix", "UPLplus"]
+write_df = ["DivideMix"]
+read_dir = {"DivideMix": "/DivideMix"}
+names = ["DivideMix"]
 
 legend = False
 
-exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
+# exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
+exp_type_order = ["0.2_sym",  "0.9_sym"]
 # exp_type_order = ["0.2_sym", "0.2_asym", "0.4_sym", "0.4_asym"]
 
 # text = ylabel
