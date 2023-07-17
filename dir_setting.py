@@ -14,7 +14,8 @@ def mk_csv(df, method, f_name, arch, ylabel):
     print("save to {}{}_{}_{}_table.csv".format(folder, arch, method, ylabel))
 
 
-def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='average',
+def final_df(Ylabel, ylabel, dataset, arch, hue_order, names, 
+             mode='figure', opt='average',
              f_name=None, root=None, read_dir=None, exp_type_order=None):
     df_list = []
 
@@ -118,7 +119,7 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
     #         process(method, base_addr, exp_type)
     #         if mode == 'last_ten_epoch':
     #             mk_csv(df, method, f_name, arch)
-    for method in hue_order:
+    for method, name in zip(hue_order, names):
         if method == 'DivideMix':
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
@@ -128,15 +129,15 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, mode='figure', opt='avera
                 mk_csv(df, method, f_name, arch, ylabel)
         elif method == 'Proposed':
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
-                base_addr = "{}{}/log/{}_UPL_{}_{}/*".format(
-                    root, read_dir[method], dataset, arch, exp_type2)
+                base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
+                    root, read_dir[method], dataset, name, arch, exp_type2)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch, ylabel)
         else:
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
-                base_addr = "{}{}/log/{}_UPL_{}_{}/*".format(
-                    root, read_dir[method], dataset, arch, exp_type2)
+                base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
+                    root, read_dir[method], dataset, name, arch, exp_type2)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch, ylabel)
