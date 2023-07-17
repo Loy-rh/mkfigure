@@ -7,7 +7,8 @@ import seaborn as sns
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
 # from figure import result_sum
-sns.set(font_scale=1.5)
+# sns.set(font_scale=1.5)
+sns.set(font_scale=3.0)
 matplotlib.rcParams['pdf.fonttype'] = 42
 matplotlib.rcParams['ps.fonttype'] = 42
 plt.rcParams['font.family'] = 'Times New Roman'
