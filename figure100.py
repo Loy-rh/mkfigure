@@ -28,11 +28,11 @@ root_dir = './saved'
 # write_df = ["DivideMix", "CRAS"]
 # read_dir = {"DivideMix": '/DivideMix', "CRAS": '/CRAS'}
 # root_dir = './saved'
-# write_df = ["DivideMix", "Proposed"]
-# read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
-write_df = ["DivideMix"]
-read_dir = {"DivideMix": "/DivideMix"}
-names = ["DivideMix"]
+write_df = ["DivideMix", "Proposed"]
+read_dir = {"DivideMix": "/DivideMix", "Proposed": "/Proposed"}
+# write_df = ["DivideMix"]
+# read_dir = {"DivideMix": "/DivideMix"}
+# names = ["DivideMix"]
 
 legend = True 
 
