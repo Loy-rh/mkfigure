@@ -131,6 +131,7 @@ def final_df(Ylabel, ylabel, dataset, arch, hue_order, names,
             for exp_type, exp_type2 in zip(exp_type_order, exp_type_order2):
                 base_addr = "{}{}/log/{}_{}_{}_{}/*".format(
                     root, read_dir[method], dataset, name, arch, exp_type2)
+                print(base_addr)
                 process(method, base_addr, exp_type)
             if mode == 'last_ten_epoch':
                 mk_csv(df, method, f_name, arch, ylabel)
