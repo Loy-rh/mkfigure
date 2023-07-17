@@ -55,22 +55,22 @@ def mk_fig(
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
             # g.set(xticks=[0,50,100,150,200])
             if epoch == 300:
-                g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
+                g.set(xticks=range(0, 301, 50))
             else:
                 g.set(xticks=[0, 20, 40, 60, 80, 100])
             # if dataset == 'cifar100':
             #     g.set(yticks=[0, 10, 20, 30, 40, 50, 60, 70, 80])
-            figsize = (16, 4)
+            # figsize = (16, 4)
         elif col_wrap == 2:
             if legend:
                 g.fig.axes[0].legend(handles, labels, bbox_to_anchor=(1, 1), loc='lower center',
                                      ncol=len(hue_order), frameon=True, borderaxespad=3)
             if epoch == 300:
-                g.set(xticks=[0, 50, 100, 150, 200, 250, 300])
+                g.set(xticks=range(0, 301, 50))
             else:
                 g.set(xticks=[0, 20, 40, 60, 80, 100])
             # g.set(yticks=[10, 20, 30, 40, 50, 60, 70])
-            figsize = (12, 8)
+            # figsize = (12, 8)
         else:
             raise NotImplementedError
 
@@ -78,7 +78,7 @@ def mk_fig(
     if not os.path.exists(folder):
         os.system(f"mkdir -p {folder}")
     fig = plt.gcf()
-    fig.set_size_inches(figsize)
+    # fig.set_size_inches(figsize)
 
     # save figure
     fig.savefig(f"{folder}/figure{dataset}_{text}.png", bbox_inches='tight', pad_inches=0.1)
