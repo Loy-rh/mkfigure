@@ -9,7 +9,7 @@ plt.rcParams['font.size'] = 24
 plt.tight_layout()
 
 x = np.linspace(0, 1, 100)
-alpha = 0.5
+alpha = 5
 y = beta.pdf(x, alpha, alpha)
 plt.plot(x, y, linewidth=3)
 plt.ylim([0, 3.5])
