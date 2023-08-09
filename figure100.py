@@ -35,7 +35,7 @@ names = ["DivideMix", "UPLplus"]
 # read_dir = {"DivideMix": "/DivideMix"}
 # names = ["DivideMix"]
 
-legend = True 
+legend = False 
 
 # exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
 exp_type_order = ["0.2_sym",  "0.9_sym"]
