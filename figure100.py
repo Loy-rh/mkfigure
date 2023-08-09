@@ -9,14 +9,14 @@ f_name = os.path.basename(__file__).split('.')[0]
 # setting parameter
 # ylabel = "Accuracy"
 # Ylabel = 'Test accuracy'
-# ylabel = 'Number_of_labeled_samples'
-# Ylabel = 'Rate of labeled samples'
+ylabel = 'Number_of_labeled_samples'
+Ylabel = 'Rate of labeled samples'
 # ylabel = 'AUC'
 # Ylabel = 'AUC'
 # ylabel = 'Precision'
 # Ylabel = 'Precision'
-ylabel = 'plabel_acc'
-Ylabel = 'Pseudo-Labels Accuracy'
+# ylabel = 'plabel_acc'
+# Ylabel = 'Pseudo-Labels Accuracy'
 # ylabel = 'plabel_acc_th'
 # Ylabel = 'Pseudo-Labels Accuracy'
 
@@ -37,8 +37,8 @@ names = ["DivideMix", "UPLplus"]
 
 legend = True 
 
-exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
-# exp_type_order = ["0.2_sym",  "0.9_sym"]
+# exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
+exp_type_order = ["0.2_sym",  "0.9_sym"]
 # exp_type_order = ["0.2_sym", "0.2_asym", "0.4_sym", "0.4_asym"]
 
 # text = ylabel
