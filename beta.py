@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 plt.rcParams['font.family'] = 'Times New Roman'
 plt.rcParams['font.size'] = 24
-plt.tigt_layout()
+plt.tight_layout()
 
 x = np.linspace(0, 1, 100)
 alpha = 0.5
