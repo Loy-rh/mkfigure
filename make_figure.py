@@ -34,7 +34,7 @@ def mk_fig(
 
         kws = dict(linewidth=.8)
         g = sns.FacetGrid(
-            df, col='Noise Type', hue='Method', hue_order=hue_order,
+            df.to_numpy(), col='Noise Type', hue='Method', hue_order=hue_order,
             palette=palette, col_wrap=col_wrap, height=10
         )
         g = g.map(sns.lineplot, 'Epoch', Ylabel, **kws).add_legend()
