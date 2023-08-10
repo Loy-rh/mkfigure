@@ -37,7 +37,8 @@ def mk_fig(
             df, col='Noise Type', hue='Method', hue_order=hue_order,
             palette=palette, col_wrap=col_wrap, height=10
         )
-        g = g.map(sns.lineplot(df.values), 'Epoch', Ylabel, **kws).add_legend()
+        # g = g.map(sns.lineplot, 'Epoch', Ylabel, **kws).add_legend()
+        g = g.map(sns.lineplot, 'Epoch', Ylabel).add_legend()
         g.set_titles("{col_name}")
         g.fig.subplots_adjust(wspace=0.1)
         g.set(ylim=ylim)
