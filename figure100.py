@@ -36,7 +36,7 @@ names = ["DivideMix", "UPLplus"]
 # names = ["DivideMix"]
 
 legend = True
-ylim = [0, 100]
+ylim = [0, 1]
 
 # exp_type_order = ["0.2_sym", "0.5_sym", "0.8_sym", "0.9_sym"]
 # exp_type_order = ["0.2_sym",  "0.9_sym"]
